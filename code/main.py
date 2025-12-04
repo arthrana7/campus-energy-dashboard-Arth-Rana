@@ -7,18 +7,15 @@ from src.aggregate import calculate_daily_totals, calculate_weekly_aggregates, b
 from src.visualize import generate_dashboard
 from src.summary import export_outputs
 
-#  Load data
 df = load_energy_data("data")
 
-#Aggregations
 daily = calculate_daily_totals(df)
 weekly = calculate_weekly_aggregates(df)
 summary = building_wise_summary(df)
 
-# Create visualization
 generate_dashboard(daily, weekly, summary)
 
-#Export summary + cleaned data
 export_outputs(df, daily, weekly, summary)
 
 print("Pipeline completed successfully!")
+
